@@ -10,7 +10,7 @@ export function replacePWD(serialized: string) {
 export function replaceIdProperties<R extends Record<string, unknown>>(obj: R) {
   return Object.fromEntries(
     Object.entries(obj).map((entry) => {
-      // 11 matches the default `uid()` call
+      // 11 matches the default `uid()` return value length
       if (entry[0] === "id" && typeof entry[1] === "string" && entry[1].length === 11) {
         entry[1] = "${ID}";
       } else if (Array.isArray(entry[1])) {

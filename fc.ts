@@ -1,1 +1,1 @@
-export * from "npm:fast-check@3.3.0";
+export * from "npm:fast-check@3.7.1";
