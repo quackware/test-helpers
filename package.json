@@ -1,4 +1,5 @@
 {
   "name": "@quackware/test-helpers",
+  "description": "Basic test helpers",
   "version": "0.0.1"
 }
