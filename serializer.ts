@@ -1,6 +1,7 @@
-import { getQuackWareEnv, hasStringProperties, isCi, isRecord, serialize } from "./deps.ts";
+import { isCi } from "./ci.ts";
+import { hasStringProperties, isRecord, serialize } from "./deps.ts";
 
-const ciOrTest = isCi() || getQuackWareEnv() === "test";
+const ciOrTest = isCi() || Deno.env.get("QUACKWARE_ENV") === "test" || Deno.env.get("NODE_ENV") === "test";
 const PWD = Deno.env.get("PWD") ?? Deno.cwd();
 
 export function replacePWD(serialized: string) {
